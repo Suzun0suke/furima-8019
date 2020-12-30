@@ -7,8 +7,8 @@
 | email              | string  | null: false, unique: true | 
 | encrypted_password | string  | null: false               | 
 | nickname           | string  | null: false               | 
-| first_name         | string  | null: false               | 
 | last_name          | string  | null: false               | 
+| first_name         | string  | null: false               | 
 | birthday           | date    | null: false               | 
 
 ### Association
@@ -18,7 +18,7 @@
 ## itemsテーブル
 | Column             | Type          | Options                        | 
 | ------------------ | ------------- | ------------------------------ | 
-| item_name          | string        | null: false                    | 
+| name               | string        | null: false                    | 
 | explanation        | text          | null: false                    | 
 | category_id        | integer       | null: false                    | 
 | state_id           | integer       | null: false                    | 
@@ -51,7 +51,9 @@
 | municipality    | string     | null: false                    | 
 | address         | string     | null: false                    | 
 | building        | string     |                                | 
-| phone_number    | integer    | null: false                    | 
+| phone_number    | string     | null: false                    | 
+| purchase        | reference  | null: false, foreign_key: true | 
+
 
 ### Association
 - belongs_to :purchase
