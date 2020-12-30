@@ -24,7 +24,7 @@
 | state_id           | integer       | null: false                    | 
 | delivery_cost_id   | integer       | null: false                    | 
 | shipment_source_id | integer       | null: false                    | 
-| shipping_days_id   | integer       | null: false                    | 
+| shipping_day_id    | integer       | null: false                    | 
 | selling_price      | integer       | null: false                    | 
 | user               | references    | null: false, foreign_key: true | 
 
