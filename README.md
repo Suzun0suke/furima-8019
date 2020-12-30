@@ -47,7 +47,7 @@
 | Column          | Type       | Options                        | 
 | --------------- | ---------- | ------------------------------ | 
 | postal_cord     | integer    | null: false                    | 
-| prefecture      | ActiveHash | null: false                    | 
+| prefecture_id   | integer    | null: false                    | 
 | municipality    | string     | null: false                    | 
 | address         | string     | null: false                    | 
 | building        | string     |                                | 
