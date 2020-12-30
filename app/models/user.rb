@@ -12,9 +12,9 @@ class User < ApplicationRecord
     validates :first_name_f
     validates :birthday
   end
-  # validates :email, uniqueness: { case_sensitive: true }
+  validates :email, uniqueness: { case_sensitive: true }
   # 全角（漢字・ひらがな・カタカナ）
-  validates :encrypted_password, format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i}
+  validates :password, format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i}
   with_options format: {with: /\A[ぁ-んァ-ン一-龥]/} do
     validates :last_name
     validates :first_name
