@@ -7,6 +7,15 @@ class Item < ApplicationRecord
   belongs_to :shipping_day
   belongs_to :state
 
+  with_options presence: true do
+    validates :category
+    validates :delivery_cost
+    validates :shipment_source
+    validates :shipping_day
+    validates :shipping_day
+    validates :state
+  end
+  
   with_options numericality: { other_than: 1 } do
     validates :category_id 
     validates :delivery_cost_id
