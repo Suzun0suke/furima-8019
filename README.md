@@ -9,6 +9,8 @@
 | nickname           | string  | null: false               | 
 | last_name          | string  | null: false               | 
 | first_name         | string  | null: false               | 
+| last_name_f        | string  | null: false               | 
+| first_name_f       | string  | null: false               | 
 | birthday           | date    | null: false               | 
 
 ### Association
@@ -46,7 +48,7 @@
 ## deliveriesテーブル
 | Column          | Type       | Options                        | 
 | --------------- | ---------- | ------------------------------ | 
-| postal_cord     | integer    | null: false                    | 
+| postal_cord     | string     | null: false                    | 
 | prefecture_id   | integer    | null: false                    | 
 | municipality    | string     | null: false                    | 
 | address         | string     | null: false                    | 
