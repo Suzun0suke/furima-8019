@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root to: 'items#index'
-  resources :item, only:[:edit]
+  resources :item, only:[:new]
 end
