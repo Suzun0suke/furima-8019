@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_day
   belongs_to :state
 
+  # 空欄禁止
   with_options presence: true do
     validates :category
     validates :delivery_cost
@@ -14,8 +15,12 @@ class Item < ApplicationRecord
     validates :shipping_day
     validates :shipping_day
     validates :state
+    validates :image
+    validates :name
+    validates :explanation
   end
   
+  # プルリスト１番禁止
   with_options numericality: { other_than: 1 } do
     validates :category_id 
     validates :delivery_cost_id
@@ -23,4 +28,7 @@ class Item < ApplicationRecord
     validates :shipping_day_id
     validates :state_id
   end
+
+  validates :selling_price, numericality: { grater_than_or_equal_to: 300 , less_than_or_equal_to: 9999999}
+  validates :selling_price, numericality: {only_integer: true}
 end
