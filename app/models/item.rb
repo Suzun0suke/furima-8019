@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_day
   belongs_to :state
   belongs_to :user
+  has_many :purchases
 
   # 空欄禁止
   with_options presence: true do
