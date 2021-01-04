@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to :shipment_source
   belongs_to :shipping_day
   belongs_to :state
+  belongs_to :user
 
   # 空欄禁止
   with_options presence: true do
@@ -29,6 +30,6 @@ class Item < ApplicationRecord
     validates :state_id
   end
 
-  validates :selling_price, numericality: { grater_than_or_equal_to: 300 , less_than_or_equal_to: 9999999}
+  validates :selling_price, numericality: { greater_than_or_equal_to: 300 , less_than_or_equal_to: 9999999}
   validates :selling_price, numericality: {only_integer: true}
 end
