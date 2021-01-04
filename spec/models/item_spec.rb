@@ -102,11 +102,17 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Selling price is not a number")
       end
-    
+      it "価格が半角英数混合" do
+        @item.selling_price = "abc100"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Selling price is not a number")
+      end
+      it "半角英語だけでは登録できないこと" do
+        @item.selling_price = "abc"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Selling price is not a number")
+      end
     end
-    
-    
-    
   end
 end
 
