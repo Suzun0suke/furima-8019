@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :purchase_delivery do
-    user_id           {"2"}
-    item_id           {"2"}
+    user_id           {""}
+    item_id           {""}
     postal_cord       {"100-0000"}
-    prefecture_id     {"2"}
+    prefecture_id     { 2 }
     municipality      {"緑区"}
     address           {"箱崎町1-1"}
     building          {"緑ビル"}

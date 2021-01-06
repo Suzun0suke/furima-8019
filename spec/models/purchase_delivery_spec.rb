@@ -2,7 +2,12 @@ require 'rails_helper'
 
 RSpec.describe PurchaseDelivery, type: :model do
   before do
+    user = FactoryBot.create(:user)
+    item = FactoryBot.create(:item)
     @purchase_delivery = FactoryBot.build(:purchase_delivery)
+    @purchase_delivery.user_id = user.id
+    @purchase_delivery.item_id = item.id
+    sleep(1)
   end
   describe "商品購入" do
     context "購入できる時" do
