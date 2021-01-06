@@ -38,8 +38,7 @@ class PurchasesController < ApplicationController
   end
   # 購入された商品の購入ページへはいけない
   def purchased_item
-    purchase = Purchase.find_by(item_id: params[:item_id])
-    unless purchase == nil
+    unless @item.purchase.blank?
       redirect_to root_path
     end
   end
