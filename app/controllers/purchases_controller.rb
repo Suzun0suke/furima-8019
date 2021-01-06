@@ -1,5 +1,7 @@
 class PurchasesController < ApplicationController
-
+  before_action :authenticate_user!
+  before_action :move_to_index
+  before_action :purchased_item
   def index
     @item = Item.find(params[:item_id])
     @purchase_delivery = PurchaseDelivery.new
@@ -28,5 +30,19 @@ class PurchasesController < ApplicationController
         card: purchase_params[:token],    # カードトークン
         currency: 'jpy'                 # 通貨の種類（日本円）
       )
+  end
+  #出品したユーザーは購入できない
+  def move_to_index
+    item = Item.find(params[:item_id])
+    if current_user.id == item.user_id
+      redirect_to root_path
+    end
+  end
+  # 購入された商品の購入ページへはいけない
+  def purchased_item
+    purchase = Purchase.find_by(item_id: params[:item_id])
+    unless purchase == nil
+      redirect_to root_path
+    end
   end
 end
