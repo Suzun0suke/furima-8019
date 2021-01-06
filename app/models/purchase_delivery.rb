@@ -17,7 +17,7 @@ class PurchaseDelivery
   validates :prefecture_id,numericality: { other_than: 1 }
 
   def save
-    Purchase.create(user_id: user_id, item_id: item_id)
-    Delivery.create(postal_cord: postal_cord, prefecture_id: prefecture_id, municipality: municipality, address: address, building: building, phone_number: phone_number)
+    purchase = Purchase.create(user_id: user_id, item_id: item_id)
+    Delivery.create(postal_cord: postal_cord, prefecture_id: prefecture_id, municipality: municipality, address: address, building: building, phone_number: phone_number, purchase_id: purchase.id)
   end
 end
