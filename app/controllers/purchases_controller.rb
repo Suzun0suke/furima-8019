@@ -1,14 +1,11 @@
 class PurchasesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :move_to_index
-  before_action :purchased_item
+  before_action :authenticate_user!, :move_to_index, :purchased_item, :item_find
+  
   def index
-    @item = Item.find(params[:item_id])
     @purchase_delivery = PurchaseDelivery.new
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @purchase_delivery = PurchaseDelivery.new(purchase_params)
     if @purchase_delivery.valid?
       pay_item
@@ -22,6 +19,9 @@ class PurchasesController < ApplicationController
   private
   def purchase_params
     params.require(:purchase_delivery).permit(:phone_number, :postal_cord, :prefecture_id, :municipality, :address, :building, :phone_number).merge(user_id: current_user.id, item_id: @item.id, token: params[:token])
+  end
+  def item_find
+    @item = Item.find(params[:item_id])
   end
   def pay_item
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
