@@ -78,7 +78,7 @@ RSpec.describe PurchaseDelivery, type: :model do
         expect(@purchase_delivery.errors.full_messages).to include("Phone number is invalid.") 
       end
       it "prefecture_idが1" do
-        @purchase_delivery.prefecture_id = "1"
+        @purchase_delivery.prefecture_id = 1
         @purchase_delivery.valid?
         expect(@purchase_delivery.errors.full_messages).to include("Prefecture must be other than 1")
       end
