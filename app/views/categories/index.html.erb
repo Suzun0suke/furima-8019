@@ -1,0 +1,48 @@
+<%= render "shared/header" %>
+<div class="categories">
+  <div class="cate">
+    <div class="category">
+      <%= link_to image_tag("ladies.png", class:"icon-img lad"), category_path(id: 2), class:"category-name" %>
+      <p>レディース<p>
+    </div>
+    <div class="category">
+      <%= link_to image_tag("mens.png", class:"icon-img men"), category_path(id: 3), class:"category-name" %>
+      <p>メンズ</p>
+    </div>
+    <div class="category">
+      <%= link_to image_tag("baby.png", class:"icon-img baby"), category_path(id: 4), class:"category-name" %>
+      <p>ベビー・キッズ</p>
+    </div>
+    <div class="category">
+      <%= link_to image_tag("sofa.png", class:"icon-img sofa"), category_path(id: 5), class:"category-name" %>
+      <p>インテリア・住まい・小物</p>
+    </div>
+    <div class="category">
+      <%= link_to image_tag("cd.png", class:"icon-img cd"), category_path(id: 6), class:"category-name" %>
+      <p>本・音楽・ゲーム</p>
+    </div>
+  </div>
+  <div class="cate">
+    <div class="category">
+      <%= link_to image_tag("lego.png", class:"icon-img lego"), category_path(id: 7), class:"category-name" %>
+      <p>おもちゃ・ホビー・グッズ</p>
+    </div>
+    <div class="category">
+      <%= link_to image_tag("camera.png", class:"icon-img camera"), category_path(id: 8), class:"category-name" %>
+      <p>家電・スマホ・カメラ</p>
+    </div>
+    <div class="category">
+      <%= link_to image_tag("tent.png", class:"icon-img tent"), category_path(id: 9), class:"category-name" %>
+      <p>スポーツ・レジャー</p>
+    </div>
+    <div class="category">
+      <%= link_to image_tag("present.png", class:"icon-img pres"), category_path(id: 10), class:"category-name" %>
+      <p>ハンドメイド</p>
+    </div>
+    <div class="category">
+      <%= link_to image_tag("box.png", class:"icon-img box"), category_path(id: 11), class:"category-name" %>
+      <P>その他</p>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>
