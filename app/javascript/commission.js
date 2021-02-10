@@ -1,4 +1,4 @@
-function commission (){
+if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {function commission (){
   priceInput = document.getElementById("item-price")
   priceInput.addEventListener('input',() => {
     const inputValue = priceInput.value
@@ -8,3 +8,4 @@ function commission (){
   })
 }
 window.addEventListener('load', commission)
+}
