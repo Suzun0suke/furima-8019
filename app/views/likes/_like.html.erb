@@ -1,0 +1,11 @@
+<% if item.liked_by?(current_user)%>
+  <%= link_to item_likes_path(item.id), method: :delete, remote: true do%>
+    <i class="fa fa-heart fa-2x" aria-hidden="true" style="color: red;"></i>
+    <span class="like_count"><%= item.likes.count %></span>
+   <% end %>
+<% else %>
+  <%= link_to item_likes_path(item.id), method: :post, remote: true do%>
+    <i class="fa fa-heart fa-2x" aria-hidden="true" style="color: gray;"></i>
+    <span class="like_count"><%= item.likes.count %></span>
+  <% end %>
+<% end %>

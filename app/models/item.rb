@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_day
   belongs_to :state
   belongs_to :user
+  has_many :likes
   has_one :purchase
 
   # 空欄禁止
@@ -33,4 +34,8 @@ class Item < ApplicationRecord
 
   validates :selling_price, numericality: { greater_than_or_equal_to: 300 , less_than_or_equal_to: 9999999}
   validates :selling_price, numericality: {only_integer: true}
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
 end

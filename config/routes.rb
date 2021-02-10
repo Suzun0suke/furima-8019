@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :categories, only:[:index, :show]
   resources :items do
     resources :purchases, only:[:index, :create]
+    resource :likes, only:[:create, :destroy]
   end
 end

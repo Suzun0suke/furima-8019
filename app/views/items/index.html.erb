@@ -136,7 +136,7 @@
             <span>Sold Out!!</span>
           </div>
         <% end %>
-
+        <% end %>
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
@@ -144,13 +144,11 @@
           </h3>
           <div class='item-price'>
             <span><%= item.selling_price %>円<br><%= item.category.name %></span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
+            <div id='likes_btn<%= item.id %>'>
+              <%= render partial: 'likes/like', locals:{ item: item}%>
             </div>
           </div>
         </div>
-        <% end %>
       </li>
       <% end %>
 
