@@ -1,3 +1,4 @@
+if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
 function profit (){
   priceInput = document.getElementById("item-price")
   priceInput.addEventListener('input',() => {
@@ -8,3 +9,4 @@ function profit (){
   })
 }
 window.addEventListener('load', profit)
+}

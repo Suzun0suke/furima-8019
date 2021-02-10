@@ -83,6 +83,8 @@
 .click-upload {
   margin: 15px 0;
   min-width: 250px;
+  display: flex;
+  align-items: center;
 }
 
 .click-upload>p {
@@ -90,7 +92,9 @@
 }
 
 /* /出品画像 */
-
+.pre-img{
+  height: 15vh;
+}
 /* 商品名と商品説明 */
 .new-items {
   padding: 2vh 0;
