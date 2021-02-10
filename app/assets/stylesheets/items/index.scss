@@ -275,7 +275,6 @@ a {
   font: bold;
 }
 
-
 .item-info {
   background-color: #FFF;
   color: black;
@@ -293,19 +292,8 @@ a {
 }
 
 
-.star-btn {
-  display: flex;
-  align-items: center;
-}
-
-.star-icon {
-  height: 2vh;
-  width: 2vh;
+/* //商品一覧 */
+.like_count{
+  font-size: 2vh;
   margin-right: 0.5vw;
 }
-
-.star-count {
-  font-size: 2vh;
-}
-
-/* //商品一覧 */
