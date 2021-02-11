@@ -81,6 +81,5 @@ RSpec.describe PurchaseDelivery, type: :model do
         expect(@purchase_delivery.errors.full_messages).to include("都道府県は --- 以外を選択してください")
       end
     end
-    
   end
 end

@@ -140,6 +140,15 @@
 
 /* /商品の概要 */
 
+.tags{
+  display: flex;
+}
+.tag{
+  margin-right: 5px;
+  background-color: rgba(60,202,206,0.5);
+  border-radius: 3px;
+  padding: 3px;
+}
 .comment-box {
   width: 40vw;
   background-color: #fff;
