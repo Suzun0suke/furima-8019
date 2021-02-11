@@ -1,0 +1,35 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        last_name: 苗字
+        first_name: 名前
+        last_name_f: ミョウジ
+        first_name_f: ナマエ
+        birthday: 生年月日
+      item:
+        image: 画像
+        name: 商品名
+        explanation: 商品の説明
+        selling_price: 販売価格
+        category_id: カテゴリー
+        state_id: 商品の状態
+        delivery_cost_id: 発送料の負担
+        shipment_source_id: 発送元の地域
+        shipping_day_id: 発送までの日数
+        category: カテゴリー
+        state: 商品の状態
+        delivery_cost: 発送料の負担
+        shipment_source: 発送元の地域
+        shipping_day: 発送までの日数
+  activemodel:
+    attributes:
+      purchase_delivery:
+        postal_cord: 郵便番号
+        prefecture_id: 都道府県
+        municipality: 市区町村
+        address: 番地
+        building: 建物名
+        phone_number: 電話番号
+        token: クレジットカード

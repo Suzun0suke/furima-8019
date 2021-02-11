@@ -24,7 +24,7 @@ class Item < ApplicationRecord
   end
   
   # プルリスト１番禁止
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1 , message:'は --- 以外を選択してください'} do
     validates :category_id 
     validates :delivery_cost_id
     validates :shipment_source_id
