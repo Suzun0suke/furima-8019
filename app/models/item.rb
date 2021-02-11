@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :likes
   has_one :purchase
-
+  acts_as_taggable
   # 空欄禁止
   with_options presence: true do
     validates :category
