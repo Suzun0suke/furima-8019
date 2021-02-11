@@ -44,6 +44,9 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.search(params[:keyword])
+    if params[:tag_name]
+      @items = Item.tagged_with("#{params[:tag_name]}")
+    end
   end
   private
 

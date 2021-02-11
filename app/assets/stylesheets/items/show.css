@@ -151,6 +151,10 @@
   border-radius: 3px;
   padding: 3px;
 }
+.tag-name{
+  text-decoration: none;
+  color: black;
+}
 .comment-box {
   width: 40vw;
   background-color: #fff;

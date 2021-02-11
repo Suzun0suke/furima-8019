@@ -52,7 +52,7 @@
             <div class="tags">
               <% @item.tag_list.each do |tag| %>
                 <div class="tag">
-                  <%= tag %>
+                  <%= link_to tag, search_items_path(tag_name: tag), class:"tag-name" %>
                 </div>
               <% end %>
             </div>
