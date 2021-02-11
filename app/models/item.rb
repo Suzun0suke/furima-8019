@@ -35,7 +35,16 @@ class Item < ApplicationRecord
   validates :selling_price, numericality: { greater_than_or_equal_to: 300 , less_than_or_equal_to: 9999999}
   validates :selling_price, numericality: {only_integer: true}
 
+  def self.search(search)
+    if search != ""
+      name = Item.where('name LIKE(?)', "%#{search}%")
+      tag = Item.tagged_with([search], wild: true, any: true)
+      name | tag
+    end
+  end
+  
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
+
 end
