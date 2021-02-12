@@ -102,6 +102,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  align-items: center;
 }
 
 .favorite-btn {
@@ -114,6 +115,7 @@
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+  padding: 1vh 0;
 }
 
 .favorite-star-icon {
@@ -148,6 +150,10 @@
   background-color: rgba(60,202,206,0.5);
   border-radius: 3px;
   padding: 3px;
+}
+.tag-name{
+  text-decoration: none;
+  color: black;
 }
 .comment-box {
   width: 40vw;

@@ -41,6 +41,13 @@ class ItemsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def search
+    @items = Item.search(params[:keyword])
+    if params[:tag_name]
+      @items = Item.tagged_with("#{params[:tag_name]}")
+    end
+  end
   private
 
   def item_params

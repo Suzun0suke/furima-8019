@@ -52,7 +52,7 @@
             <div class="tags">
               <% @item.tag_list.each do |tag| %>
                 <div class="tag">
-                  <%= tag %>
+                  <%= link_to tag, search_items_path(tag_name: tag), class:"tag-name" %>
                 </div>
               <% end %>
             </div>
@@ -77,9 +77,13 @@
       </tbody>
     </table>
     <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+      <div id='likes_btn<%= @item.id %>'>
+        <% if user_signed_in? %>
+          <%= render partial: 'likes/like', locals:{ item: @item }%>
+        <% else %>
+          <i class="fa fa-heart fa-2x" aria-hidden="true" style="color: gray;"></i>
+          <span class="like_count"><%= @item.likes.count %></span>
+        <% end %>
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
