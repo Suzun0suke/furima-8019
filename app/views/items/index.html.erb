@@ -124,7 +124,13 @@
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+    <div >
+      <%= link_to '販売中のみ表示', remove_items_path(items: @items), remote: true ,class:'select'%>
+      <%= link_to '全て表示', all_items_path(items: @items), remote: true ,class:'select'%>
+    </div>
+    <div id='items'>
     <%= render partial: 'item-lists', locals:{items: @items}%>
+    </div>
   </div>
   <%# /商品一覧 %>
 </div>

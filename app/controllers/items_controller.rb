@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only:[:show, :edit, :update, :move_to_index, :destroy]
+  before_action :set_item, only:[:show, :edit, :update, :move_to_index, :destroy] 
   before_action :move_to_index, :purchased_item ,only:[:edit, :destroy]
   
   def index
@@ -48,6 +48,20 @@ class ItemsController < ApplicationController
       @items = Item.tagged_with("#{params[:tag_name]}")
     end
   end
+
+  def remove
+    @items = Item.all.includes(:user).order("created_at DESC")
+    @bought_items = []
+    @items.each do |item|
+      if item.purchase.blank?
+        @bought_items << item
+      end
+    end
+  end
+
+  def all 
+    @items = Item.all.includes(:user).order("created_at DESC")
+  end
   private
 
   def item_params
@@ -68,4 +82,5 @@ class ItemsController < ApplicationController
       redirect_to root_path
     end
   end
+  
 end

@@ -62,3 +62,4 @@ gem 'pry-rails'
 gem 'payjp'
 gem 'rails-i18n'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem "aws-sdk-s3", require: false
